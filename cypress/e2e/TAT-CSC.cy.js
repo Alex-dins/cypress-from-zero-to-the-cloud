@@ -189,7 +189,7 @@ describe("TAT Customer Service Center", () => {
       });
   });
 
-  it.only("verifies that the privacy policy page opens in another tab without the need for a click", () => {
+  it("verifies that the privacy policy page opens in another tab without the need for a click", () => {
     cy.contains("a", "Privacy Policy")
       .should("have.attr", "href", "privacy.html")
       .and("have.attr", "target", "_blank");
@@ -200,7 +200,7 @@ describe("TAT Customer Service Center", () => {
     cy.get("#privacy a").invoke("removeAttr", "target").click();
   });
 
-  it.only("independently test the privacy policy page", () => {
+  it("independently test the privacy policy page", () => {
     cy.get("#privacy a").invoke("removeAttr", "target").click();
     cy.get("#title").should("have.text", "TAT CSC - Privacy Policy");
     cy.get("#white-background").contains(
